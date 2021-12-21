@@ -1,7 +1,6 @@
 import { Task } from "src/interfaces/Tasks";
 import { Grid, Button, GridColumn } from "semantic-ui-react";
 import { useRouter } from "next/router";
-import { userInfo } from "os";
 import TaskList from "src/components/tasks/TaskList";
 import Layout from 'src/components/Layout'
 
@@ -38,7 +37,7 @@ export default function IndexPage({ tasks }: Props) {
 }
 
 export const getServerSideProps = async () => {
-  const res = await fetch("http://localhost:3000/api/tasks");
+  const res = await fetch("https://typescript-crud-faf1xqpnq-kerlinlopes.vercel.app/api/tasks");
   const tasks = await res.json();
 
   return {
