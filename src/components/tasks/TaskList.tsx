@@ -12,6 +12,7 @@ function TaskList({ tasks }: Props) {
   return (
     <Card.Group itemsPerRow={4}>
       {tasks.map((task) => (
+
         <Card key={task.id} onClick={() => router.push(`/tasks/edit/${task.id}`)}>
           <Card.Content>
             <Card.Header>{task.title}</Card.Header>
