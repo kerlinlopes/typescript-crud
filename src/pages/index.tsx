@@ -37,7 +37,7 @@ export default function IndexPage({ tasks }: Props) {
 }
 
 export const getServerSideProps = async () => {
-  const res = await fetch("http://localhost:3000/api/tasks");
+  const res = await fetch("https://typescript-crud-alpha.vercel.app/api/tasks");
   const tasks = await res.json();
 
   return {

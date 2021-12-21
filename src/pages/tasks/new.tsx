@@ -18,7 +18,7 @@ const NewPage = (): JSX.Element => {
   const router = useRouter();
 
   const createTask = async (task: Task) =>
-      await fetch("http://localhost:3000/api/tasks", {
+      await fetch("https://typescript-crud-alpha.vercel.app/api/tasks", {
       method: "POST",
       body: JSON.stringify(task),
       headers: {
@@ -27,7 +27,7 @@ const NewPage = (): JSX.Element => {
     });
 
   const updateTask = async (id: string, task: Task) =>
-    await fetch("http://localhost:3000/api/tasks/" + id, {
+    await fetch("https://typescript-crud-alpha.vercel.app/api/tasks/" + id, {
       method: "PUT",
       body: JSON.stringify(task),
       headers: {
@@ -57,14 +57,14 @@ const NewPage = (): JSX.Element => {
     setTask({ ...task, [name]: value });
 
   const loadTask = async (id: string) => {
-    const res = await fetch("http://localhost:3000/api/tasks/" + id);
+    const res = await fetch("https://typescript-crud-alpha.vercel.app/api/tasks/" + id);
     const task = await res.json();
     setTask({ title: task.title, description: task.description });
   };
 
   const handleDelete = async (id: string) => {
     try {
-      const res = await fetch("http://localhost:3000/api/tasks/" + id, {
+      const res = await fetch("https://typescript-crud-alpha.vercel.app/api/tasks/" + id, {
         method: "DELETE",
       });
       router.push("/");
