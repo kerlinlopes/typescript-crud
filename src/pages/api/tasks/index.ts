@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { conn } from "src/utils/database";
+import Head from "next/head";
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
   const { method, body } = req;
